@@ -1,2 +1,2 @@
 # belajarcrud-php
-Belajar CRUUD PHP
+Belajar CRUD PHP
