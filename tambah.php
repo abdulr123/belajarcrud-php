@@ -36,26 +36,27 @@ if (isset($_POST['submit'])) {
         <ul>
             <li>
                 <label for="nama">Nama :</label>
-                <input type="text" name="nama" require>
+                <input type="text" name="nama" required>
             </li>
             <li>
                 <label for="nama">NPM :</label>
-                <input type="text" name="npm" require>
+                <input type="text" name="npm" required>
             </li>
             <li>
                 <label for="nama">Jurusan :</label>
-                <input type="text" name="jurusan" require>
+                <input type="text" name="jurusan" required>
             </li>
             <li>
                 <label for="nama">Email :</label>
-                <input type="text" name="email" require>
+                <input type="text" name="email" required>
             </li>
             <li>
                 <label for="nama">Gambar :</label>
-                <input type="text" name="gambar" require>
+                <input type="text" name="gambar" required>
             </li>
             <li>
                 <button type="submit" name="submit">Tambah Data</button>
+                <a href="index.php">Kembali</a>
             </li>
         </ul>
     </form>
