@@ -37,3 +37,28 @@ function hapus($id)
 
     return mysqli_affected_rows($db);
 }
+
+function ubah($data)
+{
+    global $db;
+
+    $id = $data['id'];
+    $nama = htmlspecialchars($data['nama']);
+    $npm = htmlspecialchars($data['npm']);
+    $jurusan = htmlspecialchars($data['jurusan']);
+    $email = htmlspecialchars($data['email']);
+    $gambar = htmlspecialchars($data['gambar']);
+
+    $query = "UPDATE mahasiswa SET 
+            nama = '$nama',
+            npm = '$npm',
+            jurusan = '$jurusan',
+            email = '$email',
+            gambar = '$gambar'
+            WHERE id = $id
+            ";
+
+    mysqli_query($db, $query);
+
+    return mysqli_affected_rows($db);
+}
