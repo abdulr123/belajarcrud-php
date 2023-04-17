@@ -3,7 +3,7 @@
 session_start();
 require 'function.php';
 
-// cek dulu cookie 
+// cek dulu cookie
 if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     $id = $_COOKIE['id'];
     $key = $_COOKIE['key'];
@@ -18,26 +18,23 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
     }
 }
 
-if (isset($_SESSION["login"])) {
-    header("Location: index.php");
+if (isset($_SESSION['login'])) {
+    header('Location: index.php');
     exit;
 }
 
-
-
-if (isset($_POST["login"])) {
-
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     $result = mysqli_query($db, "SELECT * FROM user WHERE username = '$username' ");
     // cek username
     if (mysqli_num_rows($result) === 1) {
         // cek pssword
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row["password"])) {
-            //set session 
-            $_SESSION["login"] = true;
+        if (password_verify($password, $row['password'])) {
+            // set session
+            $_SESSION['login'] = true;
 
             // cek remember me
             if (isset($_POST['remember'])) {
@@ -49,7 +46,7 @@ if (isset($_POST["login"])) {
                 setcookie('key', hash('sha256', $row['username']), time() + 60);
             }
 
-            header("Location: index.php");
+            header('Location: index.php');
             exit;
         }
     }
@@ -71,9 +68,9 @@ if (isset($_POST["login"])) {
 
 <body>
     <h1>LOGIN</h1>
-    <?php if (isset($error)) : ?>
+    <?php if (isset($error)) { ?>
         <p style="color:red;">username / password salah</p>
-    <?php endif ?>
+    <?php } ?>
     <form action="" method="POST">
         <ul>
             <li>
@@ -90,6 +87,8 @@ if (isset($_POST["login"])) {
             </li>
             <li>
                 <button type="submit" name="login"> Login</button>
+                <a href="regsitrasi.php">Register</a>
+                
             </li>
         </ul>
     </form>

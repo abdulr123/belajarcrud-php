@@ -2,20 +2,16 @@
 
 session_start();
 
-if (!$_SESSION["login"]) {
-    header("Location: login.php");
+if (!$_SESSION['login']) {
+    header('Location: login.php');
     exit;
 }
 
 require 'function.php';
 
-
-//cek apakah tombol submit sudah di tekan atau belum
-if (isset($_POST["submit"])) {
-
-
-
-    //cek apakah data berhasil di tambahkan atau tidak
+// cek apakah tombol submit sudah di tekan atau belum
+if (isset($_POST['submit'])) {
+    // cek apakah data berhasil di tambahkan atau tidak
     if (tambah($_POST) > 0) {
         echo "
             <script>
@@ -73,6 +69,7 @@ if (isset($_POST["submit"])) {
             </li>
             <li>
                 <button type="submit" name="submit">Tambah Data</button>
+                <a href="index.php">Kembali</a>
             </li>
         </ul>
 
