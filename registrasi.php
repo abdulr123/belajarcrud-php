@@ -2,7 +2,7 @@
 
 require 'function.php';
 
-if (isset($_POST["register"])) {
+if (isset($_POST['register'])) {
     if (registrasi($_POST) > 0) {
         echo " <script>
             alert('user baru berhasil ditambahkan');
@@ -44,6 +44,7 @@ if (isset($_POST["register"])) {
             </li>
             <li>
                 <button type="submit" name="register"> Register</button>
+                <a href="index.php">Kembali</a>   
             </li>
         </ul>
     </form>
