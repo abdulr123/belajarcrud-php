@@ -39,19 +39,19 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="nama" required>
             </li>
             <li>
-                <label for="nama">NPM :</label>
+                <label for="npm">NPM :</label>
                 <input type="text" name="npm" required>
             </li>
             <li>
-                <label for="nama">Jurusan :</label>
+                <label for="jurusan">Jurusan :</label>
                 <input type="text" name="jurusan" required>
             </li>
             <li>
-                <label for="nama">Email :</label>
+                <label for="email">Email :</label>
                 <input type="text" name="email" required>
             </li>
             <li>
-                <label for="nama">Gambar :</label>
+                <label for="gambar">Gambar :</label>
                 <input type="text" name="gambar" required>
             </li>
             <li>
